@@ -1,0 +1,38 @@
+Console:
+    > new
+    Website: abc.xyz
+    Mail/Username:abc@xyz.com
+    Password: 1234
+
+    Saved new password:
+    Website          Mail                  Password
+    abc.xyz          abc@xyz.com           1234
+
+    > lst
+    Saved passwords
+       Website          Mail                  Password
+     1)abc.xyz          abc@xyz.com           1234
+
+    > lst -index 1
+    Showing Entry at index 1
+        Website:abc.xyz
+        Mail:abc@xyz.com
+        Password:1234
+
+    > edit -index 1
+    Editing index 1[abc.xyz]->
+        Website: abc.xyz
+        Mail/Username:pqr@xyz.com
+        Password: 9898
+    Saved new password:
+    Website          Mail                  Password
+    abc.xyz          pqr@xyz.com           9898
+
+    > edit -website abc.xyz
+    Editing website abc.xyz->
+        Website: abc.xyz
+        Mail/Username:asd@xyz.com
+        Password: qwerty
+    Saved new password:
+    Website          Mail                  Password
+    abc.xyz          asd@xyz.com           qwerty
