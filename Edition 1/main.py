@@ -7,84 +7,6 @@ def key()->bytes:
     with open('key.bin','rb') as key:
         return key.read()
 
-# class Password2:
-#     @staticmethod
-#     def field(password:str):
-#         pwd=Fernet(Password.key()).encrypt(eval(f"b'{password}'"))
-#         return str(pwd).replace('b','').replace("'",'')
-
-#     @staticmethod
-#     def unfield(field:str):
-#         pwd=Fernet(Password.key()).decrypt(eval(f'b"{field}"'))#.decrypt(eval(f"b'{field}'"))
-#         return str(pwd)
-
-#     @staticmethod
-#     def pull()->dict:
-#         with open('passwords.json','r') as j:
-#             return load(j)
-
-#     @staticmethod
-#     def push(passwords:dict)->None:
-#         ## 
-#         passes=Password.pull()
-#         with open('passwords.json','w') as jW:
-#             passes.update(passwords)
-#             dump(passes,jW)
-#Password.push({'A':['B',Password.field('C')]})
-#Password.unfield('gAAAAABkGXkpH-Snx1wGXW_QztCBa9OnE0yyd0CFxOX9c_V37nEnne8yc6OIxdtgzRmvPse5Fsy7trTU__10280QIS4fPw==')
-#print(Fernet(Password.key()).decrypt(b'gAAAAABkGXkpH-Snx1wGXW_QztCBa9OnE0yyd0CFxOX9c_V37nEnne8yc6OIxdtgzRmvPse5Fsy7trTU__10280QIS4fPw=='))
-
-## Rewrite
-
-# class Password:
-#     @staticmethod
-#     def field(password:str):
-#         pwd=Fernet(Password.key()).encrypt(eval(f"b'{password}'"))
-#         return str(pwd).replace('b','').replace("'",'')
-
-#     @staticmethod
-#     def unfield(field:str):
-#         pwd=Fernet(Password.key()).decrypt(field)#.decrypt(eval(f"b'{field}'"))
-#         return str(pwd)
-
-#     @staticmethod
-#     def pull()->dict:
-#         with open('passwords.json','r') as j:
-#             pwd = load(j)
-#         pwd:dict
-#         npwd:dict
-#         for k,v in pwd.items():
-#             v[1]=Fernet(Password.key()).decrypt()
-#             npwd[k]=v                    
-
-#     @staticmethod
-#     def push(passwords:dict)->None:
-#         ## 
-#         passes=Password.pull()
-#         with open('passwords.json','w') as jW:
-#             passes.update(passwords)
-#             dump(passes,jW)
-
-#     @staticmethod
-#     def key():
-#         with open('key.bin','rb') as key:
-#             return key.read()
-
-# class Command:
-#     def __init__(self) -> None:
-#         pass
-#     @staticmethod
-#     def new():
-#         web,mail,pwd=input('Enter the website:'),input('Enter the mail/username:'),input('Enter the password:')
-
-
-# if __name__ == '__main__':
-#     func={'new':Command.new}
-#     func[input('>')]()
-
-'''
-> new
-'''
 class Fernet_:
     fernet=Fernet(key())
 
@@ -140,9 +62,3 @@ class Password:
         with open('passwords.json','r') as j:
             pwd = load(j)
         return pwd
-
-
-#Password.unpack(Password.pull())
-di={'Spotify':['adityadasch@gmail.com','Krishna340']}
-print(Password.push(di))
-print(Password.pull())
